@@ -1,6 +1,7 @@
 function getComputerSelection(){
-	x = Math.floor(Math.random()*(3-1+1) + 1);
-	alert(x);
+	numberComputer = Math.floor(Math.random()*(3-1+1) + 1);
+    return(numberComputer);
+	
 }
 
 /*
@@ -10,8 +11,8 @@ function getRandomInt(min, max) {
 */
 
 function getplayerSelection() {
-	y=prompt ('Choose your gun: 1) Paper; 2) Rock; 3)Scissor');
-	alert(y);
+	numberPlayer = prompt ('Choose your gun: 1) Paper; 2) Rock; 3)Scissor');
+	return(numberPlayer);
 }
 
 
@@ -22,37 +23,25 @@ function playRound(playerSelection, computerSelection) {
 	2)rock;
 	3)scissor;
 	*/
-	
 
-	switch (true) {
-    	case playerSelection == 1 && computerSelection == 2:
-        	alert("Player Won: paper win rock");
-        	break;
-    	case playerSelection == 2 && computerSelection == 1:
-        	alert("Computer Won: paper win rock");
-        	break;
-    	case playerSelection == 1 && computerSelection == 3:
-        	alert("Computer Won: scissor win paper");
-        	break;
-    	case playerSelection == 3 && computerSelection == 1:
+        if (playerSelection == 1 && computerSelection == 2){
+            alert("Player Won: paper win rock");
+        }else if (playerSelection == 2 && computerSelection == 1){
+            alert("Computer Won: paper win rock");
+        }else if (playerSelection == 1 && computerSelection == 3) {
+            alert("Computer Won: scissor win paper");
+        }else if (playerSelection == 3 && computerSelection == 1) {
         	alert("Player Won: scissor win paper");
-        	break;
-    	case playerSelection == 2 && computerSelection == 3:
-        	alert("Player Won: rock win scissor");
-        	break;
-    	case playerSelection == 3 && computerSelection == 2:
-        	alert("Computer Won: rock win scissor");
-        	break;
-    	case playerSelection == computerSelection:
-        	alert("It was a tie");
-        	break;
-    	default:
-        	alert("Something went horribly wrong...");
-		
-	}
-
+        }else if (playerSelection == 2 && computerSelection == 3) {
+            alert("Player Won: rock win scissor");
+        }else if (playerSelection == 3 && computerSelection == 2) {
+            alert("Computer Won: rock win scissor");
+        }else {
+            alert("It was a tie");
+        }
 }
-
+    
+    
 	console.log(playRound(getplayerSelection(), getComputerSelection()));
 	
 
